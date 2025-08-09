@@ -1,31 +1,73 @@
-# APP_TASKS - App de gestión de tareas
+# Gestor de Tareas Personal
 
-Este proyecto es una aplicación móvil para la gestión de tareas personales  
-Incluye backend con NestJS y Prisma para la API REST, y frontend móvil con Flutter.
+Aplicación móvil y backend para la gestión de tareas diarias, desarrollada como parte de una prueba técnica para Wagon.
 
----
+## Descripción
+El sistema permite a los usuarios:
+- Ver todas sus tareas
+- Crear nuevas tareas
+- Editar tareas existentes
+- Marcar tareas como completadas o pendientes
+- Eliminar tareas
 
-## Estructura del proyecto
-
-- `/server` - Código del servidor API REST construido con NestJS y Prisma (PostgreSQL)  
-- `/mobile` - Aplicación móvil Flutter
-
----
-
-## Requisitos
-
-- Node.js >= 16  
-- PostgreSQL (base de datos configurada)  
-- Flutter SDK instalado  
-- Variables de entorno definidas en `.env` para backend
+Incluye autenticación para que cada usuario gestione solo sus propias tareas.
 
 ---
 
-## Instalación y ejecución
+## Tecnologías Usadas
 
-### Backend
+### **Frontend (mobile/)**
+- Flutter 3.x
+- Dart
+- Manejo de estado con `StatefulWidget`
+- Consumo de API REST vía `http`
 
-1. Ir a la carpeta `backend`  
-2. Instalar dependencias:  
-   ```bash
-   npm install
+### **Backend (server/)**
+- Node.js
+- NestJS
+- PostgreSQL
+- Prisma
+- DTOs para validación
+- Autenticación JWT
+- Controladores, Servicios y Módulos con buenas prácticas
+
+---
+
+## **AVISOS**
+Manejo del token en memoria
+Se optó por mantener el token únicamente en memoria durante la sesión de la app para simplificar la implementación y evitar riesgos de almacenamiento inseguro. Esta decisión facilita las pruebas rápidas en el entorno de la prueba técnica, aunque en un entorno productivo se recomendaría persistirlo de forma segura (ej. flutter_secure_storage) para mejorar la experiencia de usuario.
+
+Uso de un modelo híbrido de autenticación
+Se implementó un token firmado tipo JWT con un payload reducido (solo userId y email) en lugar de un JWT completo con expiración y roles. Esto permitió integrar rápidamente la autenticación con el frontend Flutter, manteniendo seguridad básica y simplificando el desarrollo para la prueba técnica. En un entorno productivo se recomienda ampliar el payload y añadir control de expiración y roles para una gestión más robusta de permisos.
+
+## Instalación y Ejecución Local
+
+Se debe crear archivo .env para server con variables:
+DATABASE_URL
+JWT_SECRET
+Otro a considerar, URL del backend desplegado para hacer pruebas desde el frontend:
+https://app-tareas-1tmj.onrender.com
+
+Endpoints disponibles:
+
+USER
+POST /auth/register
+POST /auth/login
+
+TASK (Requisito: token del JWT)
+GET /task
+POST /task
+PUT /task/id
+DELETE /task/id
+
+Nota: La pk es versión UUID
+
+### 1️: Clonar repositorio
+```bash
+git clone https://github.com/student452/APP_TAREAS.git
+cd APP_TAREAS
+
+
+
+
+
