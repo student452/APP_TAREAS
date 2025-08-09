@@ -1,6 +1,6 @@
 # Gestor de Tareas Personal
 
-Aplicación móvil y backend para la gestión de tareas diarias, desarrollada como parte de una prueba técnica para Wagon.
+Aplicación móvil y backend para la gestión de tareas diarias.
 
 ## Descripción
 El sistema permite a los usuarios:
@@ -17,8 +17,8 @@ Incluye autenticación para que cada usuario gestione solo sus propias tareas.
 ## Tecnologías Usadas
 
 ### **Frontend (mobile/)**
-- Flutter 3.x
-- Dart
+- Flutter 3.32.8
+- Dart 3.8.1
 - Manejo de estado con `StatefulWidget`
 - Consumo de API REST vía `http`
 
