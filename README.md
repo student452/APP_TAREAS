@@ -53,6 +53,17 @@ JWT_SECRET
 ```bash
 git clone https://github.com/student452/APP_TAREAS.git
 cd APP_TAREAS
+```
+
+### Despliegue
+
+El proyecto está desplegado en Render, que aloja tanto el backend como la base de datos.
+
+Backend: API REST desarrollada con NestJS accesible públicamente para la aplicación Flutter.
+
+Base de datos: PostgreSQL conectada de forma segura al backend mediante variables de entorno.
+
+Render ofrece despliegue continuo, por lo que los cambios enviados a la rama principal de GitHub se actualizan automáticamente en producción.
 
 
 
