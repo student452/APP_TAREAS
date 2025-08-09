@@ -43,24 +43,11 @@ Se implementó un token firmado tipo JWT con un payload reducido (solo userId y 
 ## Instalación y Ejecución Local
 
 Se debe crear archivo .env para server con variables:
+
 DATABASE_URL
+
 JWT_SECRET
-Otro a considerar, URL del backend desplegado para hacer pruebas desde el frontend:
-https://app-tareas-1tmj.onrender.com
 
-Endpoints disponibles:
-
-USER
-POST /auth/register
-POST /auth/login
-
-TASK (Requisito: token del JWT)
-GET /task
-POST /task
-PUT /task/id
-DELETE /task/id
-
-Nota: La pk es versión UUID
 
 ### 1️: Clonar repositorio
 ```bash
